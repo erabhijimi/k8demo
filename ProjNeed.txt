@@ -1,0 +1,78 @@
+install docker and kubernetes in ur local.
+https://docs.docker.com/docker-for-windows/install/
+
+check if hyper-v is enabled		::	systeminfo
+run powershell as admin		:: 	Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+or select hyper-v in windows features and restart system.
+https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v#:~:text=Enable%20the%20Hyper-V%20role%20through%20Settings%20%201,4%20Select%20Hyper-V%20and%20click%20OK.%20See%20More
+or restart windows->open bios(F10)->System configuration->enable virtualization -> save
+
+docker -v 
+docker info
+
+install bellow,
+https://chocolatey.org/install
+run in bash as admin 		::
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+check by commands::
+choco 
+choco -?
+
+Now install,
+choco install kubernetes-cli
+choco install minikube
+
+Lets start K8,
+minikube start 
+minikube		//will show all commands available
+minikube delete
+
+minikube dashboard
+minikube stop
+
+
+docker system prune
+
+
+
+Deploy::::::::::::::::::::::::::::::	DockerHub		abhijitmishra2632:Tavant#1234
+git clone -b kubernetes https://github.com/shabbirdwd53/Springboot-Microservice.git
+1.add docker file plugin
+
+<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<repository>dailycodebuffer/user-service</repository>
+					<tag>${project.version}</tag>
+					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+				</configuration>
+			</plugin>
+2.update the project version to something simpler
+3.Create the Dockerfile 
+
+FROM openjdk:8
+COPY login-service.jar /
+EXPOSE 9001
+ENTRYPOINT ["java","-jar","login-service.jar"]
+
+or 
+
+FROM openjdk:8
+ADD target/service-discovery.jar service-discovery.jar
+EXPOSE 8761
+ENTRYPOINT ["java","-jar","service-discovery.jar"]
+
+4.
+mvn clean package dockerfile:push 

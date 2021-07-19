@@ -1,0 +1,66 @@
+Intro
+What is Kubernetes?
+Kubernetes Architechture
+Kubernetes Components
+    Node & Pod
+    Service & Ingress
+    ConfigMap & Secret
+    Volumes
+    Deployment & StatefulSet
+Installing kubbectl and minikube
+    What is minikube?
+    What is kubectl?
+    Install minikube and kubectl
+    create and start a minikube cluster in the local environment
+Kubernetes CLI Commands with Example (kubectl)
+    Create a pod/deployment
+    Get status of different components
+    Change the pod/deployment configuration
+    Debugging pods
+    Delete pod/deployment
+Kubernetes YAML Configuration
+    Different attributes of a Kubernetes config file
+    Creating config files
+Kubernetes Namespace
+    What is a Namespace?
+    4 Default Namespaces
+    Create a Namespace and resources
+    Why use Namespaces?
+Kubernetes Healthchecks
+    What is Heathcheck?
+    Liveness Probe
+    Readiness Probe
+Ingress Service
+    What is Ingress? 
+    Creating YAML Config Files for Ingress
+    How to configure Ingress in your cluster?
+    What is Ingress Controller?
+    Demo: Configure Ingress in Minikube
+    Ingress Config based on Paths
+    Ingress Config based on Domain and Subdomain
+Statefulset in Kubernetes
+    What is StatefulSet? 
+    Deployment of Stateful and Stateless Application
+    Deployment vs StatefulSet
+    Pod Identity
+    Scaling database applications: Master and Worker Pods
+Kubernetes Services
+    What is a Service?
+    ClusterIP Services
+    Headless Services
+    NodePort Services
+    LoadBalancer Services
+Volumes in Kubernetes
+    Persistent Volume (PV)
+    Persistent Volume Claim (PVC)
+    Storage Class (SC)
+⌚ (02:09:10) Deploying MIcroservices App to Kubernetes Cluster
+                         📍 Microservice Overview
+                         📍 Adding Dockerfile and Dockerfile Plugins
+                         📍 Adding configurations for Service Registry
+                         📍 Creating Kubernetes Config files (YAML)
+                         📍 Implementing API Gateway
+                         📍 Deploying applications to Kubernetes Cluster
+                         📍 Scaling Application
+                         📍 Kubernetes Dashboard
+                         📍 Deleting resources from Kubernetes Cluster
