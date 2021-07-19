@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.cosmos</groupId>
 	<artifactId>service-registry</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>service-registry</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -67,7 +67,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>abhijitmishra2632/service-discovery</repository>
+					<repository>abhijitmishra2632/service-registry</repository>
 					<tag>${project.version}</tag>
 				</configuration>
 			</plugin>
