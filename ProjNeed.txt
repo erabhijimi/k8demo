@@ -79,3 +79,17 @@ mvn clean package dockerfile:push
 
 incase push does not work,
 1.docker tag abhijitmishra2632/service-registry:0.0.1 abhijitmishra2632/service-registry
+
+Configure for Service Registry:::::::::::::::::::::::::::::::
+Service registry update:
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: "${HOSTNAME}.eureka"
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    serviceUrl:
+      defaultZone: ${EUREKA_SERVER_ADDRESS}
+
